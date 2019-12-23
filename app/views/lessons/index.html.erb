@@ -1,2 +1,17 @@
-<h2> Index </h2>
+<h2> All Classes  </h2>
+
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <!-- Navbar content -->
+  <%= link_to 'Add PT Class'  , new_lesson_path %> <br><br>
+    <% @lessons.each do |lesson|%>
+    <div class="container-fluid">
+    <%= link_to lesson.title, lesson_path(lesson)%> 
+    <%= lesson.duration %> 
+    </div>
+
+    <% end %>
+
+    <%= link_to 'Home Page', root_path%> 
+
+</nav>
 

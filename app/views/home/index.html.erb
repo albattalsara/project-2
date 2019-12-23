@@ -1,13 +1,19 @@
 <h1>
 Home page
 </h1>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
 
 <% if user_signed_in? %>
 
-<%= link_to "Sign_out", destroy_user_session_path, method: :delete %>
+<%= link_to "Sign_out", destroy_user_session_path, method: :delete,:class => "button btn btn-success" %>
 <br>
-<%= link_to "Update user account", edit_user_registration_path %>
-<br>
+<%= link_to "Update user account", edit_user_registration_path, :class => "button btn btn-success" %>
+<br> <br>
+<strong>
+<%= link_to "View Classes", lessons_path, :class => "button btn btn-success" %>
+<br></strong>
 <% end %>
 
 <h1> <%=@user.email%> </h1>
+
+</nav>
