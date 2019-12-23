@@ -1,0 +1,20 @@
+
+<p id="notice"><%= notice %></p>
+
+<strong> Title: </strong>
+<p>
+<%= @lesson.title%>
+<%=@lesson.duration%>
+<%=@lesson.cost %>
+<%=@lesson.description%>
+<%=@lesson.image_url%>
+</p>
+
+
+
+<%= link_to 'Edit', edit_user_password_path (@lesson) %> 
+<%= link_to 'Back', root_path (@lesson) %>
+ 
+
+
+

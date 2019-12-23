@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+### User Stories:
+# Version'1' : Creating the device and a model.
+##   I stated that my webApp is about scheduling Classes for Trainers.
+## So My user is the trainers and the model is the lessons which is the classes.
+## the realtionship between the USer and lessons is one to Many (1:M)
+## sign up, sign in , sign out , edit account , delete the user account by user
+
+

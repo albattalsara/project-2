@@ -1,0 +1,13 @@
+<h1>
+Home page
+</h1>
+
+<% if user_signed_in? %>
+
+<%= link_to "Sign_out", destroy_user_session_path, method: :delete %>
+<br>
+<%= link_to "Update user account", edit_user_registration_path %>
+<br>
+<% end %>
+
+<h1> <%=@user.email%> </h1>
