@@ -45,9 +45,11 @@
 
      
     </ul>
+    <% if user_signed_in? %>
     <div class="form-inline my-2 my-lg-0">
       <%= current_user.name%>
     </div>
+    <%end%>
   </div>
    <div>
      <p class="notice"><%= notice %></p>
