@@ -1,17 +1,49 @@
 <h2> All Classes  </h2>
 
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+
+
   <!-- Navbar content -->
-  <%= link_to 'Add PT Class'  , new_lesson_path %> <br><br>
+        <div class="container-fluid text-center">
+        <div class="row">
+       
+      <% @lessons.each do |lesson|%>
+ <div class = "col-sm-3">
+       <div class="card" style="width: 18rem;">
+      <%= link_to lesson.title, lesson_path(lesson)%> 
+ 
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> <%="Duration: "%>
+    <%= lesson.duration %> </li>
+    <li class="list-group-item"><%= lesson.cost%>
+    <%="Trainer Name: "%></li>
+    <li class="list-group-item"> <%="Trainer Name: "%>
+    <%=lesson.user.name%></li>
+  </ul>
+ </div><br>
+ </div>
+  <%end%>
+   </div>
+   </div>
+<!-- >div> -->
+  
+  <%= link_to 'Add PT Class'  , new_lesson_path,:class => "button btn btn-success" %> <br><br>
+  <!--
     <% @lessons.each do |lesson|%>
     <div class="container-fluid">
     <%= link_to lesson.title, lesson_path(lesson)%> 
+    <%="Duration: "%>
     <%= lesson.duration %> 
+    <%="Cost:"%>
+    <%= lesson.cost%>
+    <%="Trainer Name: "%>
+    <%=lesson.user.name%>
+
     </div>
 
-    <% end %>
 
-    <%= link_to 'Home Page', root_path%> 
+    <%end %>
+    -->
 
-</nav>
+    <%= link_to 'Home Page', root_path, :class => "button btn btn-success" %> 
+
 

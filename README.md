@@ -29,4 +29,5 @@ Things you may want to cover:
 ## the realtionship between the USer and lessons is one to Many (1:M)
 ## sign up, sign in , sign out , edit account , delete the user account by user
 
+# Version 2: CRUD:  Apply add new class .. list all classes ,, Delete/Edit to the class. 
 

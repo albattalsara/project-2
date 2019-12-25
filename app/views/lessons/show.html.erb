@@ -1,21 +1,53 @@
 
 <p id="notice"> <%= notice %></p>
 
-<strong> Title: </strong>
-<p>
-<%= @lesson.title%>
-<%=@lesson.duration%>
-<%=@lesson.cost %>
-<%=@lesson.description%>
-<%=@lesson.image_url%>
-</p>
 
 
+<div class="card container" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Class information</h5>
+    <p class="card-text"> <%= @lesson.title%>
+        <img src="<%=@lesson.image_url%>"style="width: 18rem" >
+       
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"> <%="Class Duration: "%>  <%=@lesson.duration%></li>
+    <li class="list-group-item"> <%="Cost: "%><%=@lesson.cost %> </li>
+    <li class="list-group-item"><%="Trainer/Poster: "%> <%=@lesson.user.name%> </li>
+    <li class="list-group-item"><%=@lesson.description%> </li>
+  </ul>
  
- <%= link_to 'Delete', lesson_path(@lesson), method: :delete%>  |
-<%= link_to 'Edit', edit_lesson_path %> |
-<%= link_to 'Back',  lessons_path %>
+</div>
+
+<%=form_for @book, :url => lesson_books_path(@lesson) do |f| %>
+<%= f.submit "Join us", :class => "button btn btn-success" %>
+<% end %>
 
 
+<% if user_signed_in? %> 
+  <% if current_user.id == @lesson.user_id%>
+        <%= link_to 'Delete', lesson_path(@lesson), method: :delete%>  |
+        <%= link_to 'Edit', edit_lesson_path %> |
+  <%end%>
 
+<%end%>
 
+ <%= link_to 'Back',  lessons_path %>
+
+<hr>
+<h1>All Memebers </h1>
+
+<table class="table">
+<tr>
+    <th>Join Date</th>
+    <th>Name of member</th>
+</tr>
+
+     <% @books.each do |book|%>
+ <tr>
+       <td> <%= book.created_at %></td>
+       <td><%= book.user.name %></td>
+</tr>
+     <%end%>
+</table>

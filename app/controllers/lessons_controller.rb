@@ -8,6 +8,11 @@ class LessonsController < ApplicationController
 
     def show
         @lesson = Lesson.find(params[:id])
+        @books = @lesson.books
+        @book = Book.new
+        ## [{user.id : "2 ",lesson.id:"12"},{},{}]
+  
+        # @book_user_id = @lesson.books.find_by(user_id:current_user.id).user_id
     end
 
     def new 
@@ -15,8 +20,11 @@ class LessonsController < ApplicationController
     end
 
     def create
+        puts "==========================================="
+        puts current_user.lessons.new
+        puts "==========================================="
         @lesson = current_user.lessons.create(lesson_params)
-        redirect_to lesson_path(@lesson)
+        redirect_to '/'
     end
 
 

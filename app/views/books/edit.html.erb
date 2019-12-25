@@ -1,0 +1,9 @@
+<%=form_for @book, url:{action: "update"} do |f| %>
+<%= f.label :clinet_name %>
+<%= f.text_field :name %>
+
+<%= f.label :mobile%>
+<%=f.text_field :mobile%>
+
+<%=f.submit%>
+<%end%>

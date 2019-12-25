@@ -17,3 +17,14 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  
+
+
+ table{
+     border: 2px solid black;
+     /* width:600px; */
+     text-align: center;
+ }
+
+ table tr , table td{
+    border: 2px solid black;
+}

@@ -1,0 +1,11 @@
+<%=form_for @book, url:{action: "create"} do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :mobile%>
+    <%= f.text_field :mobile%>
+
+    <%= f.submit 'Become as member' %>
+
+<% end %>
+
+
