@@ -20,7 +20,9 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+# Deployment Link: 
 
+## [Mind Body soul](https://quiet-escarpment-69065.herokuapp.com/) 
 * ...
 ### User Stories:
 # Version'1' : Creating the device and a model.
